@@ -11,4 +11,4 @@ for _ in 1 2; do
     cv.tex
 done
 
-mv cv-build.pdf "CV Pilný Tomáš.pdf"
+mv cv-build.pdf CV_Pilny_Tomas.pdf

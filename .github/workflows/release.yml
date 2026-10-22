@@ -23,10 +23,10 @@ jobs:
           latexmk_use_xelatex: false
 
       - name: Name the PDF after the CV
-        run: mv cv-build.pdf "CV Pilný Tomáš.pdf"
+        run: mv cv-build.pdf CV_Pilny_Tomas.pdf
 
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
-        run: gh release create "$TAG" "CV Pilný Tomáš.pdf" --title "CV $TAG" --generate-notes
+        run: gh release create "$TAG" CV_Pilny_Tomas.pdf --title "CV $TAG" --generate-notes
