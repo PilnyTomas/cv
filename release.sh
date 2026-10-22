@@ -98,7 +98,6 @@ dirty_count=$(git status --short | wc -l | tr -d ' ')
 printf 'Uncommitted paths: %s\n' "$dirty_count"
 if [[ "$dirty_count" -gt 0 ]]; then
   git status --short
-  printf 'Note: the release contains committed content only.\n'
 fi
 
 printf 'Release tag: %s\n' "$tag"
