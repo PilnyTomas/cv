@@ -1,0 +1,32 @@
+name: Build and publish CV
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          args: -jobname=cv-build -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+          latexmk_use_xelatex: false
+
+      - name: Name the PDF after the CV
+        run: mv cv-build.pdf CV_Pilny_Tomas.pdf
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" CV_Pilny_Tomas.pdf --title "CV $TAG" --generate-notes

@@ -1,0 +1,168 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[top=0.8cm,bottom=1.2cm,left=1.65cm,right=1.65cm,footskip=0.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{tgheros}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{needspace}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+
+\renewcommand{\familydefault}{\sfdefault}
+\definecolor{linkblue}{HTML}{205A96}
+\hypersetup{
+  pdftitle={Bc. Pilný Tomáš — Senior embedded software developer},
+  pdfauthor={Pilný Tomáš},
+  pdfsubject={Curriculum vitae},
+  pdfkeywords={C, C++, embedded software, firmware, FreeRTOS, RTOS, ESP32, Linux},
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=linkblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=1.6em, itemsep=0pt, topsep=3pt, parsep=0pt}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\urlstyle{same}
+\setcounter{secnumdepth}{0}
+\let\plainhref\href
+\renewcommand{\href}[2]{\plainhref{#1}{\underline{#2}}}
+\fancypagestyle{cv}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[C]{\small Page \thepage\ of \pageref*{LastPage}}}
+\pagestyle{cv}
+
+\newcommand{\role}[3]{\par\addvspace{5pt}\noindent\textbf{#1 | #2}\hfill #3\par}
+\newcommand{\cvitem}[2]{\item \textbf{#1} - #2}
+\newcommand{\cvitemcolon}[2]{\item \textbf{#1:} #2}
+\newcommand{\githubsearch}[2]{\href{#1}{#2}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Bc. Pilný Tomáš; Senior embedded software developer}\\[3pt]
+  {\fontsize{8}{10}\selectfont Location: Brno (nearest offices) / Velká Bíteš (residential), Czech Republic;
+  email: \plainhref{mailto:pilnyt@seznam.cz}{pilnyt@seznam.cz}}
+\end{center}
+\section{Summary}
+Senior embedded software developer with 9 years of professional C/C++ experience and 5 years in embedded software development. Experienced with FreeRTOS and ESP32, and CI/CD automation using Jenkins and Docker.
+
+\noindent
+\begin{minipage}[t]{0.72\textwidth}
+  \vspace{0pt}
+  Profile links:
+  \href{https://www.linkedin.com/in/tom\%C3\%A1\%C5\%A1-piln\%C3\%BD-69454bb8/}{LinkedIn}
+  \;|\; \href{https://github.com/PilnyTomas}{GitHub}
+  \;|\; \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged\&type=pullrequests}{GitHub PRs}\par\addvspace{8pt}
+  {\large\bfseries Technical Skills:}
+  \begin{itemize}
+    \item C (C99/C11) and C++11 — 9 years professionally + 7 years in school
+    \item RTOS: FreeRTOS (3 years active), RT-Thread (exposure)
+    \item Embedded software development (ESP32, Arduino, Ingenic) — 5 years
+    \item GIT usage — 9 years
+    \item Linux usage (user lvl command line, and writing shell scripts) — 9 years professionally + 7 years in school
+    \item Jenkins, Docker, Jira, Jama — 2 years
+    \item Python — occasional usage, medium level
+    \item AI usage for development help — 4 years
+  \end{itemize}
+
+  {\large\bfseries Soft Skills:}
+  \begin{itemize}
+  \item Team leadership — Scrum master for a small FW team using Jira
+    \item Mentoring — guiding a junior developer through technical issues
+    \item Technical writing — authored internal knowledge base in Azure Wiki
+    \item Presenting — in-company talks on Linux and CI/CD
+    \item Ownership — built CI/CD pipeline from zero (Jenkins, Docker, GitHub Releases)
+  \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.27\textwidth}
+  \vspace{0pt}
+  \includegraphics[width=\linewidth]{assets/profile-photo.jpg}
+\end{minipage}
+
+\section{Work Experience}
+\Needspace{3\baselineskip}
+\role{Senior Embedded Software Engineer}{Novanta}{Apr 2024 – Present}
+\begin{itemize}
+  \cvitem{FW development and maintenance}{My main task was the development and maintenance of FW features, transferring customer functionalities onto a newer system, and ensuring drop-in compatibility with older versions. Emphasis on real-time constraints, system reliability, and safety-critical firmware practices. All the development was in C11 with occasional C++11. This was accompanied by writing helper Shell scripts.}
+  \cvitem{HW debugging}{Working with datasheets and schematics, debugging using oscilloscopes, logic analyzers, and UART serial output, and Wireshark for USB data transfer analysis.}
+  \cvitem{Documentation}{I started writing our internal documentation/knowledge base (using Azure WiKi) to help orient our team in a complex environment.}
+  \cvitem{Scrum master}{Using Jira I lead a small team of developers, making sure all of our work is properly tracked and their statuses are up to date.}
+  \cvitem{CI/CD}{From zero, I have enabled Linux builds, integrated unit tests system and code coverage, created a Docker environment, and automated on Jenkins. Now we have daily builds with tests and automatic GitHub Releases including the FW binaries, code coverage reports and change notes.}
+  \cvitem{Mentoring}{I was mentoring a Junior developer, making sure he is not stuck, guiding him through issues, and helping him to grow and learn.}
+  \cvitem{Presenting}{I have created and presented in-company talks about Linux and CI/CD.}
+  \cvitemcolon{Stack}{C11, C++11, RT-Thread (platform OS), oscilloscope, logic analyzer, UART, Wireshark (USB analysis), GitHub, Jenkins, Docker, Jira, Jama, Azure Wiki.}
+\end{itemize}
+
+\Needspace{3\baselineskip}
+\role{Embedded Software Engineer}{\href{https://www.espressif.com/}{Espressif Systems}}{Sep 2020 – Mar 2024}
+\begin{itemize}
+  \cvitem{FW development}{Develop and maintain libraries and examples for ESP32 peripheral interfaces (\githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+SPI\&type=pullrequests}{SPI}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+I2C\&type=pullrequests}{I2C}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+I2S\&type=pullrequests}{I2S}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr\%3Amerged+SD\&type=pullrequests}{SD/MMC}), wireless connectivity (\githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+Bluetooth\&type=pullrequests}{Bluetooth}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+WiFi\&type=pullrequests}{WiFi}), and \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+FreeRTOS\&type=pullrequests}{FreeRTOS} multithreading. Enabling IoT connectivity, sensor integration, and data acquisition for the Arduino-ESP32 ecosystem.}
+  \cvitemcolon{\href{https://nuttx.apache.org/}{Apache NuttX}}{Implement low-level (register-based) drivers for real-time POSIX RTOS with focus on reliability and deterministic behavior.}
+  \cvitem{Debugging}{Attend to issues and actively participate in bug hunting to improve the software's stability.}
+  \cvitem{HW/SW integration}{Reading datasheets and electrical schematics, debugging with UART/serial traces, JTAG debugger, logic analyzers, and Wireshark for protocol analysis, breadboard prototyping, and soldering simple circuits.}
+  \cvitem{Improve documentation}{clarify, update, extend, and create new ones where missing completely.}
+  \cvitemcolon{Stack}{C/C++11, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+FreeRTOS\&type=pullrequests}{FreeRTOS}, ESP32, Arduino, shell, GIT, Linux, Apache NuttX, reverse engineering}
+  \cvitemcolon{Communication protocols}{GPIO, UART, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+SPI\&type=pullrequests}{SPI}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+I2C\&type=pullrequests}{I2C}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+I2S\&type=pullrequests}{I2S}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+SD\&type=pullrequests}{SD/MMC}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+Bluetooth\&type=pullrequests}{Bluetooth}, \githubsearch{https://github.com/search?q=author\%3APilnyTomas+is\%3Apr+is\%3Amerged+WiFi\&type=pullrequests}{WiFi}}
+\end{itemize}
+
+\newpage
+\Needspace{3\baselineskip}
+\role{SystemVerilog verification}{\href{https://www.onsemi.com/}{ON semiconductor Brno}}{Dec 2019 – May 2020}
+\begin{itemize}
+  \item Writing automated tests for semiconductor intellectual property (IP).
+  \item Stack: SystemVerilog, code coverage, test scenarios.
+\end{itemize}
+
+\Needspace{5\baselineskip}
+\role{VHDL Junior Developer}{Netcope Technologies}{Jan 2017 – Nov 2019}
+\noindent (renamed to \href{https://www.magmio.com/news/64-tradecope-becomes-magmio}{Tradecope} and now \href{https://www.magmio.com/}{Magmio})
+\begin{itemize}
+  \item Ultra-low latency solutions for stock market exchange on FPGA-based network cards.
+  \item Design and integrate customer requests into the existing system.
+  \item Stack: VHDL \& FPGA, C++, shell, GIT, Linux.
+\end{itemize}
+
+\section{Education}
+\textbf{2015–2016 Automatization at \href{https://www.fekt.vut.cz/}{FEKT} \href{https://www.vut.cz/en/}{BUT} (unfinished)}
+\begin{itemize}
+  \item Robotics, MCU, PLC, fuzzy logic, and others.
+\end{itemize}
+\textbf{2011–2015 Information Technologies at \href{https://www.fit.vut.cz/.en}{FIT} \href{https://www.vut.cz/en/}{BUT} (Bc.)}
+\begin{itemize}
+  \item Thesis: \href{http://hdl.handle.net/11012/52470}{"Prototype of a touchless musical instrument"} – digital design on FPGA using VHDL.
+\end{itemize}
+\textbf{2006–2010 — Electrotechnical high school}
+
+\section{Other skills}
+\begin{itemize}
+  \item English — active everyday speaking, writing, and reading.
+  \item Driving license B.
+  \item \href{https://www.youtube.com/watch?v=eeX0IiQeqAA}{Video editing} (2 semesters of filming courses).
+  \item Czech Army Active Reserve (2016–2022) - specialization: combat engineer \& pyrotechnic. In 2021 promoted to a squad commander.
+  \item Owner of a gun permit in the Czech Republic (concealed carry).
+\end{itemize}
+
+\section{Hobbies}
+\begin{itemize}
+  \item ESP32 / Arduino programming - reading datasheets \& schematics, sensor integration, IoT connectivity.
+  \item Electronics - soldering and assembling small circuits and wiring.
+  \item Home automation (Home Assistant, ESP Home)
+  \item \href{https://hradeckydvur.net/}{Historical reenactment} (14th-century Czech/Bohemian Queen Elizabeth Richeza’s court), fighting with sword and shield, halberd/pike, bow, and crossbow shooting.
+  \item Martial arts/self-defense - orange belt (\href{https://allkampf-jitsu.cz/}{AllKampf-Jitsu})
+  \item Beekeeping + mead brewing (\href{https://www.instagram.com/viksmead?igsh=MWNyajU5OWJhNDZrOA==}{Instagram: @ViksMead}).
+  \item Home gardening.
+  \item Woodworking.
+  \item Laser engraver/cutter - see our family shop: \href{https://www.gallaterra.cz/en/wooden-decorations-and-accessories}{gallaterra.cz/en}
+\end{itemize}
+\end{document}
